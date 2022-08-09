@@ -1,0 +1,57 @@
+title: Modify Channel Information
+description: Modifies channel information for users.
+method: PATCH
+version: helix
+path: channels
+resource: Bits
+authentication:
+  - OAuth Token required
+  - "Required scope: `channel:manage:broadcast`"
+query:
+  - parameter: broadcaster_id_required
+    type: string
+    description: ID of the channel to be updated
+    required: true
+  - parameter: broadcaster_id
+    type: string
+    description: ID of the channel to be updated
+    required: false
+body:
+  - parameter: broadcaster_id
+    type: string
+    description: ID of the channel to be updated
+    required: false
+  - parameter: broadcaster_id_required
+    type: string
+    description: ID of the channel to be updated
+    required: true
+response:
+  - 200
+  - 400
+  - 404
+examples:
+  - type: javascript
+    code: >-
+      const axios = require('axios');
+      
+      axios
+           .post('https://api.twitch.tv/helix/channel_points/custom_rewards?broadcaster_id=274637212', {
+           }, {
+              headers: {
+                Authorization: 'Bearer vjxv3i0l4zxru966wsnwji51tmpkj2',
+                'client-id': gx2pv4208cff0ig9ou7nk3riccffxt
+              },
+           })
+           .then(({data}) => {
+             console.log(data);
+           });
+  - type: curl
+    code: >-
+      curl -X POST 'https://api.twitch.tv/helix/channel_points/custom_rewards?broadcaster_id=274637212' \
+      -H 'client-id: gx2pv4208cff0ig9ou7nk3riccffxt' \
+      -H 'Authorization: Bearer vjxv3i0l4zxru966wsnwji51tmpkj2' \
+      -H 'Content-Type: application/json' \
+      -d '{
+        "title":"game analysis 1v1",
+        "cost":50000
+      }'

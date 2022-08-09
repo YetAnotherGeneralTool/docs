@@ -1,0 +1,25 @@
+{
+  "name": "yagt-docs",
+  "version": "0.1.0",
+  "description": "Tools for your twitch channel, discord server or youtube channel",
+  "main": "index.js",
+  "authors": {
+    "name": "derpierre65",
+    "email": "info@yagt.space"
+  },
+  "repository": "/Yet Another General Tools",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-register-components": "~2.0.0-beta.53",
+    "@vuepress/plugin-search": "~2.0.0-beta.53",
+    "@vuepress/theme-default": "~2.0.0-beta.53",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.19",
+    "tailwindcss": "^3.2.4",
+    "vuepress": "~2.0.0-beta.53"
+  }
+}
